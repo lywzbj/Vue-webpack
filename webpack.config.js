@@ -1,5 +1,5 @@
 const path = require('path')
-
+const VueLoaderPlugin=require('vue-loader/lib/plugin')
 module.exports = {
   // 入口
   entry: path.join(__dirname, './src/main.js'),     
@@ -11,7 +11,14 @@ module.exports = {
   },
   // 开发模式
   mode: 'development',
-
+  plugins:[
+    new VueLoaderPlugin()
+  ],
+  module:{
+    rules:[
+      {test:/\.vue$/,use:'vue-loader'}
+    ]
+  },
    resolve:{
      alias:{
        "vue$":"vue/dist/vue.js"

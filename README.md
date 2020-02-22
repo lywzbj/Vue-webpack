@@ -49,10 +49,35 @@
  - 先使用*npm install vue -S* 安装Vue依赖
  - 在main.js文件中导入该包（在这里若直接导入需要配置webpack.config.js  否则导入的vue功能不全，无法使用）
    - 在webpack.config.js中配置如下
-   >     resolve:{
-     alias:{
-       "vue$":"vue/dist/vue.js"
-     }
-   }
+>     resolve:{
+>     alias:{
+>       "vue$":"vue/dist/vue.js"
+>     }
+>   }
 - 在main.js中导入该依赖  *import Vue from 'vue'*
 - 然后就可直接使用创建出Vue实例并使用了 O(∩_∩)O哈哈~
+
+***
+### 使第三方loader导入 *.vue文件
+- 在src目录下创建名为 *App.vue*的vue文件  其实该文件是vue的自定义组件
+- 在main.js中引入该文件   *import App from './App.vue'*
+- 安装可解析vue文件的loader和complier
+   - 指令  *npm install vue-loader vue-template-compiler -D*
+   - 在webpack.config.js中配置如下
+      - 导入插件包
+      > const VueLoaderPlugin=require('vue-loader/lib/plugin')
+      - 配置该插件
+      >     plugins:[
+      >  new VueLoaderPlugin()
+      >    ],
+      - 配置加载loader匹配规则
+      > module:{ rules:[ {test:/\.vue$/,use:'vue-loader'} ] ]
+- 将该组件通过render的方式渲染到index.html中
+   - 在vue的实例配置内部添加如下代码  
+   > render:paste =>paste(App)
+      - render函数与Vue的data和el属性是同级的
+      - 这里的函数写法是使用ES6的箭头函数，更多render写法请自行百度
+      - 参数App即我们之前自定义并导入的组件
+- 使用 *npm run build* 构建脚本指令即可编译该文件类型 
+- 最后记得在index.html中导入被webpack编译后的输出文件即可使用
+

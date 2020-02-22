@@ -3,7 +3,8 @@
 import Vue from 'vue'
 
 
-
+//导入App组件
+import App from './App.vue'
 
 
 
@@ -15,5 +16,6 @@ var vm =new Vue({
     el:'#app',
     data:{
         msg:'Vue内部消息'
-    }
+    },
+    render:paste=>paste(App)
 })
