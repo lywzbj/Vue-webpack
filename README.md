@@ -43,4 +43,16 @@
 
 - 使用指令 *npm run build* 即可将main.js文件转换为bundle.js文件（出口文件)
 
+***
+### webpack中使用Vue
 
+ - 先使用*npm install vue -S* 安装Vue依赖
+ - 在main.js文件中导入该包（在这里若直接导入需要配置webpack.config.js  否则导入的vue功能不全，无法使用）
+   - 在webpack.config.js中配置如下
+   >     resolve:{
+     alias:{
+       "vue$":"vue/dist/vue.js"
+     }
+   }
+- 在main.js中导入该依赖  *import Vue from 'vue'*
+- 然后就可直接使用创建出Vue实例并使用了 O(∩_∩)O哈哈~

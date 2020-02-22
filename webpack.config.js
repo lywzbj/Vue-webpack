@@ -10,5 +10,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   // 开发模式
-  mode: 'development'
+  mode: 'development',
+
+   resolve:{
+     alias:{
+       "vue$":"vue/dist/vue.js"
+     }
+   }
 }
