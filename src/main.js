@@ -6,7 +6,8 @@ import Vue from 'vue'
 //导入App组件
 import App from './App.vue'
 
-
+//获取路由对象
+import routerObj from './router.js'
 
 
 
@@ -17,5 +18,6 @@ var vm =new Vue({
     data:{
         msg:'Vue内部消息'
     },
-    render:paste=>paste(App)
+    render:paste=>paste(App),
+    router:routerObj
 })

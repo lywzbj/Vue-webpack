@@ -1,7 +1,6 @@
 <template>
     <div>
-        <router-link to="/index">主页</router-link>
-        <router-view></router-view>
+        <h1>主页对象</h1>
     </div>
 </template>
 
@@ -11,6 +10,10 @@ export default {
     
 }
 </script>
+
+
+
+
 
 
 <style scoped>
