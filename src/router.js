@@ -13,7 +13,8 @@ var routerObj = new Router({
     //设置匹配路由规则
     routes:[
         {path:'/index',component:Home}    //设置路由匹配规则
-    ]
+    ],
+    linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类 link-active-class
 })
 
 //向外暴露路由对象
