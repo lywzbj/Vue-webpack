@@ -7,6 +7,7 @@
     - [1.0.3. webpack中使用Vue](#103-webpack中使用vue)
     - [1.0.4. 使第三方loader导入 *.vue文件](#104-使第三方loader导入-vue文件)
     - [1.0.5. Vue-router的使用](#105-vue-router的使用)
+    - [Vue-resource的基本使用](#vue-resource的基本使用)
 - [Vue结合MUI、Mint-UI的简单应用](#vue结合muimint-ui的简单应用)
     - [vue-router结合MUI的tabbar组件来实现手机主页](#vue-router结合mui的tabbar组件来实现手机主页)
 
@@ -137,6 +138,30 @@ export default routerObj;
         <router-view></router-view>
 ```
 
+***
+### Vue-resource的基本使用
+
+- 安装依赖包 **npm install vue-resource -D**
+
+- 在入口文件(main.js)中导入该依赖包
+```
+//导入路由模块
+import Router from 'vue-router'
+//安装路由
+Vue.use(Router)
+```
+
+- 设置全局的请求接口根路径(这里使用的是黑马程序员刘龙彬老师的接口，非常感谢黑马程序员的无私分享)
+
+> Vue.http.options.root='http://www.liulongbin.top:3005/'
+
+- 使用方法  如下
+```
+this.$http.get("http://localhost:8080").then(result =>{
+   获取后对数据进行操作
+})
+
+```
 
 ## Vue结合MUI、Mint-UI的简单应用
 
@@ -183,3 +208,12 @@ export default routerObj;
    ```
    2. 在router对象中添加
    > linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类 link-active-class
+
+***
+### 使用Vue组件库之Mint-UI制作主页轮播图
+
+- 使用指令 **npm install mint-ui -D** 安装Mint-ui
+
+- 引入Mint-ui的轮播图组件  [具体使用方法](http://mint-ui.github.io/docs/#/zh-cn2/swipe)
+
+- 使用vue-resource获取数据并渲染即可

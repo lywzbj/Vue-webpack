@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <h1>主页对象</h1>
-    </div>
+    <div>会员</div>
+    
 </template>
 
 
@@ -12,10 +11,9 @@ export default {
 </script>
 
 
+<style>
+.mint-swipe{
+    height: 200px;
 
-
-
-
-<style scoped>
-
+}
 </style>

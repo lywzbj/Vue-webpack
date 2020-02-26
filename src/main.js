@@ -9,10 +9,28 @@ import App from './App.vue'
 //获取路由对象
 import routerObj from './router.js'
 
+//导入路由模块
+import Router from 'vue-router'
+//安装路由
+Vue.use(Router)
+
+//导入Resource组件
+import VueResource from 'vue-resource'
+//安装组件
+Vue.use(VueResource)
+//设置全局请求的根路径
+Vue.http.options.root='http://www.liulongbin.top:3005/'
+
 //导入mui样式
 import './lib/mui/css/mui.min.css'
 //import './lib/mui/css/icons-extra.css'
 
+
+//导入Mint-ui
+import { Swipe, SwipeItem } from 'mint-ui';
+
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 
 //创建Vue对象
 var vm =new Vue({
