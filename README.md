@@ -1,17 +1,30 @@
 
 
+<!-- TOC -->
 
+- [0.1. webpack和Vue的基本使用](#01-webpack和vue的基本使用)
+    - [0.1.1. 学习要点](#011-学习要点)
+    - [0.1.2. Webpakc基本配置](#012-webpakc基本配置)
+    - [0.1.3. webpack中使用Vue](#013-webpack中使用vue)
+    - [0.1.4. 使第三方loader导入 *.vue文件](#014-使第三方loader导入-vue文件)
+    - [0.1.5. Vue-router的使用](#015-vue-router的使用)
+    - [0.1.6. Vue-resource的基本使用](#016-vue-resource的基本使用)
+- [0.2. Vue结合MUI、Mint-UI的简单应用](#02-vue结合muimint-ui的简单应用)
+    - [0.2.1. 初始Vue组件库之Mint-ui,使用Mint-ui的组件Header组件制作App的顶部](#021-初始vue组件库之mint-ui使用mint-ui的组件header组件制作app的顶部)
+    - [0.2.2. vue-router结合MUI的tabbar组件来实现手机主页](#022-vue-router结合mui的tabbar组件来实现手机主页)
 
-## webpack和Vue的基本使用
+<!-- /TOC -->
+
+## 0.1. webpack和Vue的基本使用
 ***
-### 学习要点
+### 0.1.1. 学习要点
 1. webpack的基本使用
 2. vue项目的实践应用
 3. vue组件的应用
 4. 使用Vue的组件Mint-UI
 5. 结合MUI开发一个伪APP
 ***
-### Webpakc基本配置
+### 0.1.2. Webpakc基本配置
 
    #### 初始化项目
 - 使用VScode打开一个文件（注意：打开的文件夹的绝对路径不要包含中文)
@@ -47,7 +60,7 @@
 - 使用指令 *npm run build* 即可将main.js文件转换为bundle.js文件（出口文件)
 
 ***
-### webpack中使用Vue
+### 0.1.3. webpack中使用Vue
 
  - 先使用*npm install vue -S* 安装Vue依赖
  - 在main.js文件中导入该包（在这里若直接导入需要配置webpack.config.js  否则导入的vue功能不全，无法使用）
@@ -61,7 +74,7 @@
 - 然后就可直接使用创建出Vue实例并使用了 O(∩_∩)O哈哈~
 
 ***
-### 使第三方loader导入 *.vue文件
+### 0.1.4. 使第三方loader导入 *.vue文件
 - 在src目录下创建名为 *App.vue*的vue文件  其实该文件是vue的自定义组件
 - 在main.js中引入该文件   *import App from './App.vue'*
 - 安装可解析vue文件的loader和complier
@@ -93,7 +106,7 @@
 
 ***
 
-### Vue-router的使用
+### 0.1.5. Vue-router的使用
 
 > 使用Vue-router的好处在于可以根据设定的router-link切换不同的vue组件，达到动态切换的效果，例如手机APP的底部导航栏就可以使用它来完成
 
@@ -131,7 +144,7 @@ export default routerObj;
 ```
 
 ***
-### Vue-resource的基本使用
+### 0.1.6. Vue-resource的基本使用
 
 - 安装依赖包 **npm install vue-resource -D**
 
@@ -155,10 +168,10 @@ this.$http.get("http://localhost:8080").then(result =>{
 
 ```
 
-## Vue结合MUI、Mint-UI的简单应用
+## 0.2. Vue结合MUI、Mint-UI的简单应用
 
 ***
-### 初始Vue组件库之Mint-ui,使用Mint-ui的组件Header组件制作App的顶部
+### 0.2.1. 初始Vue组件库之Mint-ui,使用Mint-ui的组件Header组件制作App的顶部
 
 - Mint-ui是基于Vue的第三方移动端组件库，我们可以直接导入组件并使用
 - 官方文档 [Mint-UI官方文档](http://mint-ui.github.io/#!/zh-cn)
@@ -173,7 +186,7 @@ this.$http.get("http://localhost:8080").then(result =>{
 
 
 ***
-### vue-router结合MUI的tabbar组件来实现手机主页
+### 0.2.2. vue-router结合MUI的tabbar组件来实现手机主页
 
 - 我们先到mui官网下载mui的安装包，并放到src目录下
 
@@ -217,7 +230,7 @@ this.$http.get("http://localhost:8080").then(result =>{
    > linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类 link-active-class
 
 
-***
+
 ### 使用Vue组件库之Mint-UI制作主页轮播图
 
 - 引入Mint-ui的轮播图组件  [具体使用方法](http://mint-ui.github.io/docs/#/zh-cn2/swipe)
@@ -238,14 +251,14 @@ this.$http.get("http://localhost:8080").then(result =>{
 }
 ```
 
-***
+
 ### 在Index中加入MUI的九宫格样式
 
 - 组件可参照Mui-hello实例中的Grid-default.html页面
 
 - 可根据需要修改样式或者图片
 
-***
+
 ### 使用MUI组件制作新闻列表页面并添加全局的时间格式化工具
 
 - 该页面中的具体制作方法可查看 newsList.vue页面，这里我们注重介绍如何制作格式化时间的工具
