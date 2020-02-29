@@ -1,5 +1,10 @@
 <template>
-    <div>
+    <div class="app-container">
+
+		<mt-header fixed title="Vue">
+			
+		</mt-header>
+
         <!--底部选项卡 -->
         <nav class="mui-bar mui-bar-tab">
 			<router-link  class="mui-tab-item" to="/index">
@@ -31,7 +36,15 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
+.app-container{
+	
+padding-top: 40px;    //留出Header的高度
+  padding-bottom: 50px;   //留出Tabbr的高度
+  overflow-x: hidden;
+}
+
+
 
 .mui-bar-tab .mui-tab-item.mui-active{
 	color: #007aff;

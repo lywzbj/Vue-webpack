@@ -9,7 +9,8 @@ import Home from './component/tabbar/index.vue'
 import Member from './component/tabbar/member.vue'
 import ShopCart from './component/tabbar/shopCart.vue'
 import Search from './component/tabbar/search.vue'
-
+import NewsList from './component/news/newsList.vue'
+import NewsInfo from './component/news/newsInfo.vue'
 //创建router对象
 var routerObj = new Router({
     //设置匹配路由规则
@@ -19,6 +20,9 @@ var routerObj = new Router({
         {path:'/member',component:Member}, 
         {path:'/shopCart',component:ShopCart}, 
         {path:'/search',component:Search}, 
+        {path:'/index/newsList',component:NewsList}, 
+        {path:'/index/newsInfo/:id',component:NewsInfo}, 
+
     ],
     linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类 link-active-class
 })

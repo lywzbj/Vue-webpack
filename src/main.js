@@ -23,15 +23,23 @@ Vue.http.options.root='http://www.liulongbin.top:3005/'
 
 //导入mui样式
 import './lib/mui/css/mui.min.css'
-//import './lib/mui/css/icons-extra.css'
+import './lib/mui/css/icons-extra.css'
 
+//导入格式化插件
+import moment from 'moment'
+// 定义全局的过滤器
+Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+    return moment(dataStr).format(pattern)
+  })
 
 //导入Mint-ui
-import { Swipe, SwipeItem } from 'mint-ui';
-
+import { Swipe, SwipeItem, Header,Button  } from 'mint-ui';
+Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
 
+import 'mint-ui/lib/style.css'
 //创建Vue对象
 var vm =new Vue({
     el:'#app',

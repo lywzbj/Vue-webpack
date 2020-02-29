@@ -1,30 +1,17 @@
 
-<!-- TOC -->
-
-- [webpack和Vue的基本使用](#webpack和vue的基本使用)
-    - [1.0.1. 学习要点](#101-学习要点)
-    - [1.0.2. Webpakc基本配置](#102-webpakc基本配置)
-    - [1.0.3. webpack中使用Vue](#103-webpack中使用vue)
-    - [1.0.4. 使第三方loader导入 *.vue文件](#104-使第三方loader导入-vue文件)
-    - [1.0.5. Vue-router的使用](#105-vue-router的使用)
-    - [Vue-resource的基本使用](#vue-resource的基本使用)
-- [Vue结合MUI、Mint-UI的简单应用](#vue结合muimint-ui的简单应用)
-    - [vue-router结合MUI的tabbar组件来实现手机主页](#vue-router结合mui的tabbar组件来实现手机主页)
-
-<!-- /TOC -->
 
 
 
 ## webpack和Vue的基本使用
 ***
-### 1.0.1. 学习要点
+### 学习要点
 1. webpack的基本使用
 2. vue项目的实践应用
 3. vue组件的应用
 4. 使用Vue的组件Mint-UI
 5. 结合MUI开发一个伪APP
 ***
-### 1.0.2. Webpakc基本配置
+### Webpakc基本配置
 
    #### 初始化项目
 - 使用VScode打开一个文件（注意：打开的文件夹的绝对路径不要包含中文)
@@ -60,7 +47,7 @@
 - 使用指令 *npm run build* 即可将main.js文件转换为bundle.js文件（出口文件)
 
 ***
-### 1.0.3. webpack中使用Vue
+### webpack中使用Vue
 
  - 先使用*npm install vue -S* 安装Vue依赖
  - 在main.js文件中导入该包（在这里若直接导入需要配置webpack.config.js  否则导入的vue功能不全，无法使用）
@@ -74,7 +61,7 @@
 - 然后就可直接使用创建出Vue实例并使用了 O(∩_∩)O哈哈~
 
 ***
-### 1.0.4. 使第三方loader导入 *.vue文件
+### 使第三方loader导入 *.vue文件
 - 在src目录下创建名为 *App.vue*的vue文件  其实该文件是vue的自定义组件
 - 在main.js中引入该文件   *import App from './App.vue'*
 - 安装可解析vue文件的loader和complier
@@ -99,9 +86,14 @@
       - 参数App即我们之前自定义并导入的组件
 - 使用 *npm run build* 构建脚本指令即可编译该文件类型 
 - 最后记得在index.html中导入被webpack编译后的输出文件即可使用
+
+- 需要注意的地方:
+   1. 其他类型的例如字体文件类型、less文件类型、scss类型都需要安装第三方loader才可使用
+   2. 在vue组件中的 lang='scss'  也需要安装对应的第三方Loader，具体安装方法可百度
+
 ***
 
-### 1.0.5. Vue-router的使用
+### Vue-router的使用
 
 > 使用Vue-router的好处在于可以根据设定的router-link切换不同的vue组件，达到动态切换的效果，例如手机APP的底部导航栏就可以使用它来完成
 
@@ -166,6 +158,21 @@ this.$http.get("http://localhost:8080").then(result =>{
 ## Vue结合MUI、Mint-UI的简单应用
 
 ***
+### 初始Vue组件库之Mint-ui,使用Mint-ui的组件Header组件制作App的顶部
+
+- Mint-ui是基于Vue的第三方移动端组件库，我们可以直接导入组件并使用
+- 官方文档 [Mint-UI官方文档](http://mint-ui.github.io/#!/zh-cn)
+
+- 安装方法 **npm install mint-ui -D**
+
+- Mint-ui  [Header的使用方法](http://mint-ui.github.io/docs/#/en2/header)
+
+- 最后记得导入Mint-ui的css样式文件
+ > import 'mint-ui/lib/style.css'
+
+
+
+***
 ### vue-router结合MUI的tabbar组件来实现手机主页
 
 - 我们先到mui官网下载mui的安装包，并放到src目录下
@@ -209,11 +216,89 @@ this.$http.get("http://localhost:8080").then(result =>{
    2. 在router对象中添加
    > linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类 link-active-class
 
+
 ***
 ### 使用Vue组件库之Mint-UI制作主页轮播图
-
-- 使用指令 **npm install mint-ui -D** 安装Mint-ui
 
 - 引入Mint-ui的轮播图组件  [具体使用方法](http://mint-ui.github.io/docs/#/zh-cn2/swipe)
 
 - 使用vue-resource获取数据并渲染即可
+
+- 最后记得设置轮播图的宽度和图片的渲染宽度
+
+```
+.mint-swipe {
+    height: 200px;
+    .mint-swipe-item {
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+```
+
+***
+### 在Index中加入MUI的九宫格样式
+
+- 组件可参照Mui-hello实例中的Grid-default.html页面
+
+- 可根据需要修改样式或者图片
+
+***
+### 使用MUI组件制作新闻列表页面并添加全局的时间格式化工具
+
+- 该页面中的具体制作方法可查看 newsList.vue页面，这里我们注重介绍如何制作格式化时间的工具
+
+- 先安装一个格式化插件的依赖包
+> 安装指令: **npm install moment -D**
+- 在main.js导入格式化时间的插件
+> import moment from 'moment'
+- 在main.js中添加定义全局的时间过滤器
+
+```
+Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+  return moment(dataStr).format(pattern)
+})
+```
+
+- 用法 直接将时间字符串 连接到该该过滤器  例如
+> **dateStr | dateFormat**
+
+***
+### 制作新闻详情页面并自定义评论组件
+
+- 新闻详情页面具体可参照 newsInfo.vue组件
+
+- 定义一个评论子组件
+   - 父容器向子组件传递参数
+      1. 先定义好评论子组件，并在父容器中导入并注册
+      ```
+      //导入评论子组件
+      import comment from '../subComponent/remark.vue'
+
+          components:{
+        // 注册评论子组件
+        "comment-box":comment
+         }
+      ```
+      2. 在父容器中放入该组件    其中 :id=this.newsId  是向子组件传递参数
+      ```
+         <!-- 评论子组件区域 -->
+        <comment-box :id="this.newsId"></comment-box>
+      ```
+      3. 在子组件中定义参数即可在子组件中获取该参数的值
+      ```
+       //定义参数
+       props: ["id"]
+      ```
+   - 加载更多评论内容
+      1. 由于我们第一次获取的数据是一部分数据，即第一页数据 所以不能单纯的通过下面的方式获取
+      > this.remarkes = result.body.message;       错误示范
+      2. 通过方法拼接获取的评论数据
+      > this.remarkes = this.remarkes.concat(result.body.message)  正确做法
+   - 添加最新的评论内容到数据首位
+      1. 当成功添加评论内容到数据库后，最新的评论内容需要渲染到最前面
+      > this.remarkes.unshift(cmt);
+
+
