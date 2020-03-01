@@ -21,6 +21,11 @@ Vue.use(VueResource)
 //设置全局请求的根路径
 Vue.http.options.root='http://www.liulongbin.top:3005/'
 
+
+//导入Vue缩略图组件
+import VuePreView from 'vue-preview'
+Vue.use(VuePreView)
+
 //导入mui样式
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
@@ -33,11 +38,16 @@ Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
   })
 
 //导入Mint-ui
-import { Swipe, SwipeItem, Header,Button  } from 'mint-ui';
+import { Swipe, SwipeItem, Header,Button,Lazyload   } from 'mint-ui';
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Button.name, Button);
+Vue.use(Lazyload);
+
+
+
+
 
 import 'mint-ui/lib/style.css'
 //创建Vue对象

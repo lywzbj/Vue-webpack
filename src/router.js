@@ -11,6 +11,8 @@ import ShopCart from './component/tabbar/shopCart.vue'
 import Search from './component/tabbar/search.vue'
 import NewsList from './component/news/newsList.vue'
 import NewsInfo from './component/news/newsInfo.vue'
+import PhotoList from './component/photoes/photoList.vue'
+import PhotoInfo from './component/photoes/photoInfo.vue'
 //创建router对象
 var routerObj = new Router({
     //设置匹配路由规则
@@ -22,6 +24,8 @@ var routerObj = new Router({
         {path:'/search',component:Search}, 
         {path:'/index/newsList',component:NewsList}, 
         {path:'/index/newsInfo/:id',component:NewsInfo}, 
+        {path:'/index/photoList',component:PhotoList},
+        {path:'/index/photoInfo/:id',component:PhotoInfo}
 
     ],
     linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类 link-active-class
