@@ -13,22 +13,22 @@
 
     		        <ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/index/newsList">
-		                    <span class="mui-icon mui-icon-home"></span>
+		                    <img src="/src/imges/menu/menu1.png" alt="" >
 		                    <div class="mui-media-body">新闻列表</div></router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+		                    <img src="/src/imges/menu/menu2.png" alt="" >
 		                    <div class="mui-media-body">Email</div></a></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <span class="mui-icon mui-icon-chatbubble"></span>
+		                   <img src="/src/imges/menu/menu3.png" alt="" >
 		                    <div class="mui-media-body">Chat</div></a></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <span class="mui-icon mui-icon-location"></span>
+		                    <img src="/src/imges/menu/menu4.png" alt="" >
 		                    <div class="mui-media-body">location</div></a></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <span class="mui-icon mui-icon-search"></span>
+		                    <img src="/src/imges/menu/menu5.png" alt="" >
 		                    <div class="mui-media-body">Search</div></a></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <span class="mui-icon mui-icon-phone"></span>
+		                    <img src="/src/imges/menu/menu6.png" alt="" >
 		                    <div class="mui-media-body">Phone</div></a></li>
 	
 		        </ul> 
@@ -90,6 +90,10 @@ export default {
 .mui-grid-view.mui-grid-9 {
     background-color:#fff;
     border: none;
+    img{
+        width: 60px;
+        height: 60px;
+    }
 }
 .mui-table-view {
     background-color: white;

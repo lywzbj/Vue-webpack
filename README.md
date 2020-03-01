@@ -7,8 +7,9 @@
     - [0.1.2. Webpakc基本配置](#012-webpakc基本配置)
     - [0.1.3. webpack中使用Vue](#013-webpack中使用vue)
     - [0.1.4. 使第三方loader导入 *.vue文件](#014-使第三方loader导入-vue文件)
-    - [0.1.5. Vue-router的使用](#015-vue-router的使用)
-    - [0.1.6. Vue-resource的基本使用](#016-vue-resource的基本使用)
+    - [0.1.5. Webpack-server工具的使用](#015-webpack-server工具的使用)
+    - [0.1.6. Vue-router的使用](#016-vue-router的使用)
+    - [0.1.7. Vue-resource的基本使用](#017-vue-resource的基本使用)
 - [0.2. Vue结合MUI、Mint-UI的简单应用](#02-vue结合muimint-ui的简单应用)
     - [0.2.1. 初始Vue组件库之Mint-ui,使用Mint-ui的组件Header组件制作App的顶部](#021-初始vue组件库之mint-ui使用mint-ui的组件header组件制作app的顶部)
     - [0.2.2. vue-router结合MUI的tabbar组件来实现手机主页](#022-vue-router结合mui的tabbar组件来实现手机主页)
@@ -106,7 +107,33 @@
 
 ***
 
-### 0.1.5. Vue-router的使用
+### 0.1.5. Webpack-server工具的使用
+
+- 我们都知道webpack是一个包管理工具及其编译工具，类似于Java后端的Maven或gradle，但webpack每次修改代码后都需要运行脚本命令后才能重新编译修改后的代码，所以这样很麻烦，为了解决这重复的劳动，所以我们这里可使用webpack-server来替代
+
+- webpack-server的原理是在将我们的项目部署到服务器上，每当我们修改并保存一段代码时，就会自动帮我们重新编译并部署到服务器上，可以看到实时的变化，是一个相当nice的工具，说实话，我在JAVA开发时都没用到怎么安逸的工具，哈哈，也可能是我太菜了，还没见识过Java的很多很多东西，人恨话不多，接下来我们就来动手开敲吧！！
+
+- 首先安装webpack-serer  
+  > 指令 **npm install webpack-dev-server -D** 安装依赖
+
+- 在package.json中配置该指令
+```
+"dev": "webpack-dev-server --open chrome --contentBase . --hot"
+参数详解:
+ --open chrome 部署好服务器后打开谷歌浏览器
+ --contentBase . 配置根目录
+ --hot  开启热部署 
+```
+
+- 完成
+
+
+   
+
+
+***
+
+### 0.1.6. Vue-router的使用
 
 > 使用Vue-router的好处在于可以根据设定的router-link切换不同的vue组件，达到动态切换的效果，例如手机APP的底部导航栏就可以使用它来完成
 
@@ -144,7 +171,7 @@ export default routerObj;
 ```
 
 ***
-### 0.1.6. Vue-resource的基本使用
+### 0.1.7. Vue-resource的基本使用
 
 - 安装依赖包 **npm install vue-resource -D**
 
