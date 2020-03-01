@@ -62,6 +62,7 @@ export default {
                   // 获取缩略图
       this.$http.get('api/getthumimages/' + this.photoId).then(result => {
         if (result.body.status === 0) {
+          
           // 循环每个图片数据，补全图片的宽和高
           result.body.message.forEach(item => {
             item.w = 600

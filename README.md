@@ -341,4 +341,71 @@ Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
       1. 当成功添加评论内容到数据库后，最新的评论内容需要渲染到最前面
       > this.remarkes.unshift(cmt);
 
+***
+### 使用MUI的顶部标签滑块组件制作图片列表界面的顶部图片分类功能
 
+- 详情请参考[MUI文档](https://dev.dcloud.net.cn/mui/ui/#scroll)  我们这里介绍如何在vue的组件中使用该组件
+
+- 首先将MUI组件元素放入到页面中
+
+```
+<div class="mui-scroll-wrapper">
+	<div class="mui-scroll">
+		<a>该标签可添加多个</a>
+	</div>
+</div>
+
+```
+
+- 在Vue的scprit模块中导入mui组件对象
+> import mui from  '../../lib/mui/js/mui.min.js'
+
+- 最后在vue组件对象的mounted中引入该动态效果
+```
+    mounted(){
+        mui('.mui-scroll-wrapper').scroll({
+	        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+        });
+    }
+
+```
+
+***
+### 使用Mint-ui的懒加载组件价值图片列表
+
+- 具体可查看Mint-ui的 [Lazy Load用法](http://mint-ui.github.io/docs/#/zh-cn2/lazyload)
+
+- 在使用以上文档时请注意文档有一定错误， 样式中image标签为写错的标签，正确的标签应位img  请复制时注意
+
+***
+### 使用Vue的缩略图组件制作图片详情页面，该组件的主要功能是用来放大、缩小、预览图片
+
+- 安装vue缩略图组件  **npm install vue-preview -D**
+
+- 在main.js中导入该组件并配置使用
+```
+//导入Vue缩略图组件
+import VuePreView from 'vue-preview'
+Vue.use(VuePreView)
+
+```
+- 在页面中使用该组件
+
+```
+<vue-preview :slides="list"></vue-preview>
+
+```
+
+- 在获取数据时遍历其中的图片
+
+```
+          // 循环每个图片数据，补全图片的宽和高
+          result.body.message.forEach(item => {
+            item.w = 600
+            item.h = 600
+            item.msrc = item.src
+          })
+          // 把完整的数据保存到 list 中
+          this.list = result.body.message
+
+```
