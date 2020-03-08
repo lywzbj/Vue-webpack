@@ -13,6 +13,7 @@ import NewsList from './component/news/newsList.vue'
 import NewsInfo from './component/news/newsInfo.vue'
 import PhotoList from './component/photoes/photoList.vue'
 import PhotoInfo from './component/photoes/photoInfo.vue'
+import Login from './component/tabbar/login.vue'
 //创建router对象
 var routerObj = new Router({
     //设置匹配路由规则
@@ -25,7 +26,8 @@ var routerObj = new Router({
         {path:'/index/newsList',component:NewsList}, 
         {path:'/index/newsInfo/:id',component:NewsInfo}, 
         {path:'/index/photoList',component:PhotoList},
-        {path:'/index/photoInfo/:id',component:PhotoInfo}
+        {path:'/index/photoInfo/:id',component:PhotoInfo},
+        {path:'/login',component:Login}
 
     ],
     linkActiveClass:'mui-active'   //覆盖默认的路由高亮的类 link-active-class

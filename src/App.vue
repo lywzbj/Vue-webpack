@@ -23,6 +23,10 @@
 				<span class="mui-icon mui-icon-gear"></span>
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
+      			<router-link class="mui-tab-item-ly" to="/login">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">登录</span>
+			</router-link>
 		</nav>
         <router-view></router-view>
     </div>

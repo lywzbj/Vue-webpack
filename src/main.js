@@ -38,11 +38,12 @@ Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
   })
 
 //导入Mint-ui
-import { Swipe, SwipeItem, Header,Button,Lazyload   } from 'mint-ui';
+import { Swipe, SwipeItem, Header,Button,Lazyload,Field  } from 'mint-ui';
 Vue.component(Header.name, Header);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Button.name, Button);
+Vue.component(Field.name, Field);
 Vue.use(Lazyload);
 
 
