@@ -14,6 +14,8 @@ import NewsInfo from './component/news/newsInfo.vue'
 import PhotoList from './component/photoes/photoList.vue'
 import PhotoInfo from './component/photoes/photoInfo.vue'
 import Login from './component/tabbar/login.vue'
+import GoodsList from './component/goods/GoodsList.vue'
+import GoodsInfo from './component/goods/goodsInfo.vue'
 //创建router对象
 var routerObj = new Router({
     //设置匹配路由规则
@@ -24,9 +26,11 @@ var routerObj = new Router({
         {path:'/shopCart',component:ShopCart}, 
         {path:'/search',component:Search}, 
         {path:'/index/newsList',component:NewsList}, 
+        {path:'/index/goodsList',component:GoodsList}, 
         {path:'/index/newsInfo/:id',component:NewsInfo}, 
         {path:'/index/photoList',component:PhotoList},
         {path:'/index/photoInfo/:id',component:PhotoInfo},
+        {path:'/index/goodsInfo/:id',component:GoodsInfo},
         {path:'/login',component:Login}
 
     ],

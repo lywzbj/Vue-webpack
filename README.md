@@ -409,3 +409,27 @@ Vue.use(VuePreView)
           this.list = result.body.message
 
 ```
+
+### 商品列表页面的编写--flex布局
+
+- 好久没提交代码了，主要是因为最近在开发一个很急的项目，天天加班。
+不过这次项目对于我还是具有一定帮助的，因为我除了搭建环境和负责几个接口编写以外，还负责了几乎80%的页面和、样式和功能交互渲染
+既然这个项目要得很急，所以我这里就现学现用，使用了最近学习的Vue，开发效率比以前快了不知道多少，并且也接触了layui、echarts这些前端常用组件，所以收货还是蛮多的，并且还第一次接触了flex布局方式，感觉这就是专门给我设计的吧，所以这里我们就来学习下这种最流行的布局方式-flex
+- 现在差不多结束了，所以就继续开始我们的Vue学习之旅.
+
+
+- flex  布局基本概念之容器(container)和项目（item）
+   - 容器 是flex布局的重要概念，我们可以理解为flex布局的的最外层元素，负责调整容器内的item的排列方式，并且具有专属的属性
+>
+   - flex-direction    item排列方向  可选值为row、row-reverse、column、column-reverse   默认值为row   横向排列
+   -   flex-wrap        item的换行方式   可选值为 nowrap  wrap wrap-reverse   默认值为nowrap，表示不换行
+   -   flex-flow         flex-direction和flex-flow两种属性的合并写法，具体可百度，新手不推荐使用
+   -   justify-content   item  在轴向上的对齐方式,若为横向排列，则轴向方向为横向（X轴）
+   -   align-items       item在交叉轴方向的对齐方式，若为横向排列则交叉轴为竖直方向   反之为横向
+   -   align-content     item 在多条轴线方向的对齐方式，表示当item换行后会形成多条轴线，即为多轴
+
+   - 项目 是flex布局的重要概念，我们可理解为在容器中的子元素，这里还没有具体使用到，描述待定
+
+
+
+
